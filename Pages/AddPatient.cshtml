@@ -1,0 +1,123 @@
+﻿@page
+@model AddPatientModel
+@using BedcapacityApp_bap_sebastiaan.Models;
+
+@{ ViewData["Title"] = "Patiënt toevoegen"; }
+
+
+
+<h1 align="center">@ViewData["Title"]</h1>
+
+<p></p>
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="patientnaam" class="control-label">Patiënt naam</label>
+                <input asp-for="patientnaam" class="form-control" />
+                <span asp-validation-for="patientnaam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="geslacht" class="control-label">Geslacht</label>
+                <span asp-validation-for="geslacht" class="text-danger"></span>
+                <select class="form-control" id="geslacht" name="geslacht">
+                    <option>M</option>
+                    <option>V</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="opnameDatum" class="control-label">Opname Datum</label>
+                <input asp-for="opnameDatum" class="form-control" />
+                <span asp-validation-for="opnameDatum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="aantalDagen" class="control-label">Aantal Ligdagen (vanaf de opname datum)</label>
+                <input asp-for="aantalDagen" class="form-control" />
+                <span asp-validation-for="aantalDagen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-secondary">Opslaan</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6">
+        @if (Model.optimalBeds != null && Model.optimalBeds.Any())
+        {
+<h4>Optimale bedden</h4>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Kamer ID</th>
+                            <th>Bed ID</th>
+                            <th>Ontslagdatum</th>
+                            <th>Geslacht</th>
+                            <th>Kamer status</th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        @foreach (var pat in Model.optimalBeds)
+                        {
+        <tr>
+            <td>@pat.bed.kId</td>
+            <td>@pat.bed.bId</td>
+            @if (pat.LeaveDateCurrentPatient.ToString("dd/MM/yyyy") != "01/01/0001")
+            {
+<td>@pat.LeaveDateCurrentPatient.ToString("dd/MM/yyyy")</td> }
+                    else
+                    {
+<td> - </td>}
+            <td>@pat.Gender</td>
+            @if (pat.Roomstatus == RoomStatus.HalfOccupied)
+            {
+<td>1 bed vrij</td>}
+            @if (pat.Roomstatus == RoomStatus.Full)
+            {
+<td>Volledig bezet</td>}
+        </tr>}
+                    </tbody>
+                </table>}
+        @if (Model.alternativeBeds != null && Model.alternativeBeds.Any())
+        {
+<h4>Alternatieve bedden</h4>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Kamer ID</th>
+                            <th>Bed ID</th>
+                            <th>Ontslagdatum</th>
+                            <th>Geslacht</th>
+                            <th>Kamer status</th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        @foreach (var pat in Model.alternativeBeds)
+                        {
+        <tr>
+            <td>@pat.bed.kId</td>
+            <td>@pat.bed.bId</td>
+            @if (pat.LeaveDateCurrentPatient.ToString("dd/MM/yyyy") != "01/01/0001")
+            {
+<td>@pat.LeaveDateCurrentPatient.ToString("dd/MM/yyyy")</td> }
+                    else
+                    {
+<td> - </td>}
+            <td>@pat.Gender</td>
+            @if (pat.Roomstatus == RoomStatus.HalfOccupied)
+            {
+<td>1 bed vrij</td>}
+            @if (pat.Roomstatus == RoomStatus.Full)
+            {
+<td>Volledig bezet</td>}
+            @if (pat.Roomstatus == RoomStatus.Empty)
+            {
+<td>Leeg</td>}
+        </tr>}
+                    </tbody>
+                </table>}
+    </div>
+</div>

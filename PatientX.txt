@@ -1,0 +1,19 @@
+toevoegen voor scenario 3
+
+{
+      "pId": 9,
+      "patientnaam": "PatientX",
+      "geslacht": "M",
+      "aantalDagen": 3,
+      "opnameDatum": "2021-08-24T00:00:00.000Z"
+    }
+
+Aanpassen:
+
+
+    {
+      "bId": 42,
+      "kId":4,
+      "pId": 9
+    },
+

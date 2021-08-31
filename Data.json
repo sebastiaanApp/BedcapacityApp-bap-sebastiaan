@@ -1,0 +1,138 @@
+{
+  "patienten": [
+    {
+      "pId": 1,
+      "patientnaam": "Ann Jacobs",
+      "geslacht": "V",
+      "aantalDagen": 3,
+      "opnameDatum": "2021-08-23T00:00:00.000Z"
+    },
+    {
+      "pId": 2,
+      "patientnaam": "Kevin Merkx",
+      "geslacht": "M",
+      "aantalDagen": 5,
+      "opnameDatum": "2021-08-19T00:00:00.000Z"
+    },
+    {
+      "pId": 3,
+      "patientnaam": "Willian Van Daele",
+      "geslacht": "M",
+      "aantalDagen": 5,
+      "opnameDatum": "2021-08-22T00:00:00.000Z"
+    },
+    {
+      "pId": 4,
+      "patientnaam": "Jan Jansens",
+      "geslacht": "M",
+      "aantalDagen": 4,
+      "opnameDatum": "2021-08-22T00:00:00.000Z"
+    },
+    {
+      "pId": 5,
+      "patientnaam": "Lotte Wouters",
+      "geslacht": "V",
+      "aantalDagen": 2,
+      "opnameDatum": "2021-08-24T00:00:00.000Z"
+    },
+    {
+      "pId": 6,
+      "patientnaam": "Rik Broers",
+      "geslacht": "M",
+      "aantalDagen": 4,
+      "opnameDatum": "2021-08-23T00:00:00.000Z"
+    },
+    {
+      "pId": 7,
+      "patientnaam": "Maria Verlinden",
+      "geslacht": "V",
+      "aantalDagen": 4,
+      "opnameDatum": "2021-08-23T00:00:00.000Z"
+    },
+    {
+      "pId": 8,
+      "patientnaam": "Thomas Schuurs",
+      "geslacht": "M",
+      "aantalDagen": 3,
+      "opnameDatum": "2021-08-24T00:00:00.000Z"
+    }
+  ],
+  "kamers": [
+    {
+      "kId": 1
+    },
+    {
+      "kId": 2
+    },
+    {
+      "kId": 3
+    },
+    {
+      "kId": 4
+    },
+    {
+      "kId": 5
+    },
+    {
+      "kId": 6
+    }
+  ],
+  "bedden": [
+    {
+      "bId": 11,
+      "kId": 1,
+      "pId" :  5
+    },
+    {
+      "bId": 12,
+      "kId": 1,
+      "pId": 1
+    },
+    {
+      "bId": 21,
+      "kId": 2,
+      "pId": 2
+    },
+    {
+      "bId": 22,
+      "kId": 2,
+      "pId": 4
+    },
+    {
+      "bId": 31,
+      "kId": 3,
+      "pId": 3
+    },
+    {
+      "bId": 32,
+      "kId": 3,
+      "pId": 8
+    },
+    {
+      "bId": 41,
+      "kId": 4,
+      "pId":  6
+    },
+    {
+      "bId": 42,
+      "kId":4
+    },
+    {
+      "bId": 51,
+      "kId": 5,
+      "pId":  7
+    },
+    {
+      "bId": 52,
+      "kId":5
+    },
+    {
+      "bId": 61,
+      "kId": 6
+    },
+    {
+      "bId": 62,
+      "kId":6
+    }
+  ]
+}
