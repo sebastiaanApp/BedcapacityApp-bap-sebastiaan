@@ -5,7 +5,6 @@
 @using BedcapacityApp_bap_sebastiaan.Services;
 @{ ViewData["Title"] = "Overzicht patiënten";
     List<Patient> patients = new JsonDataImporter().getData().patienten; }
-
 <h1 align="center">@ViewData["Title"]</h1>
 <hr />
 <br>
