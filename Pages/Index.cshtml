@@ -4,7 +4,7 @@
 @using BedcapacityApp_bap_sebastiaan.Interfaces.Services;
 @using BedcapacityApp_bap_sebastiaan.Services;
 @{ ViewData["Title"] = "Overzicht patiënten";
-    List<Patient> patients = new JsonDataImporter().getData().patienten; }
+}
 <h1 align="center">@ViewData["Title"]</h1>
 <hr />
 <br>
@@ -17,7 +17,7 @@
         <th scope="col">Opname Datum</th>
         <th scope="col">Ontslag Datum</th>
     </tr>
-    @foreach (var pat in patients)
+    @foreach (var pat in @Model.patients)
     {
 <tr class="table table-light" align="center">
     <td>

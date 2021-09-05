@@ -1,3 +1,4 @@
+using BedcapacityApp_bap_sebastiaan.Configurations;
 using BedcapacityApp_bap_sebastiaan.Interfaces.Services;
 using BedcapacityApp_bap_sebastiaan.Services;
 using Microsoft.AspNetCore.Builder;
@@ -29,6 +30,7 @@ namespace BedcapacityApp_bap_sebastiaan
             services.AddMvc();
             services.AddSingleton<IDataImporter, JsonDataImporter>();
             services.AddScoped<IPredictionService, PredictionService>();
+            services.Configure<DataConfiguration>(Configuration.GetSection("Dataconfig"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
